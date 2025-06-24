@@ -58,6 +58,7 @@ python src/main.py
 | `src/StageWidget.ui`  | PyQt5 UI for individual heating stage widgets    |
 | `src/up150.py`        | Driver for the Yokogawa UP150 furnace controller |
 | `src/mks647b.py`      | Driver for the MKS 647B mass flow controller     |
+| `manual/` | Documentation for Yokogawa UP150 and MKS 647B hardware, with communication protocols |
 | `requirements.txt`| Python package dependencies for easy installation|
 | `README.md`       | Project description and setup instructions       |
 | `flowchart.mmd`   | Mermaid flowchart of thread/timer structure      |

@@ -61,7 +61,7 @@ python src/main.py
 | `manual/` | Documentation for Yokogawa UP150 and MKS 647B hardware, with communication protocols |
 | `requirements.txt`| Python package dependencies for easy installation|
 | `README.md`       | Project description and setup instructions       |
-| `flowchart.mmd`   | Mermaid flowchart of thread/timer structure      |
+| `flowchart.mmd`   | Mermaid flowchart of GUI thread/timer structure      |
 | `LICENSE`   | MIT License      |
 
 ## Usage Notes

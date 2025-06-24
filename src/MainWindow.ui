@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Furnace Controller</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayoutMain">
+
+    <!-- Scroll area for stage widgets -->
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <layout class="QVBoxLayout" name="stageLayout"/>
+      </widget>
+     </widget>
+    </item>
+
+    <!-- Add/Remove stage buttons -->
+    <item>
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <item>
+       <widget class="QPushButton" name="addStageButton">
+        <property name="text">
+         <string>+ Add Stage</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="removeStageButton">
+        <property name="text">
+         <string>– Remove Last Stage</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Load/save recipe buttons -->
+    <item>
+     <layout class="QHBoxLayout" name="recipeButtonLayout">
+      <item>
+       <widget class="QPushButton" name="loadRecipeButton">
+        <property name="text">
+         <string>Load Recipe</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveRecipeButton">
+        <property name="text">
+         <string>Save Recipe</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Start/Stop buttons and status labels -->
+    <item>
+     <layout class="QHBoxLayout" name="runControlLayout">
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text">
+         <string>Start</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: lightgreen;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="text">
+         <string>Stop</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: lightcoral;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeValveButton">
+        <property name="text">
+         <string>Close Valve</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: lightgray;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="stageLabel">
+        <property name="text">
+         <string>Current Stage: -</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: navy;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timeLeftLabel">
+        <property name="text">
+         <string>Stage Time Left: -</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: darkgreen;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="elapsedTimeLabel">
+        <property name="text">
+         <string>Total Time Elapsed: 00:00:00</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: teal;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="finishTimeLabel">
+        <property name="text">
+         <string>Estimated Finish: -</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: brown;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="setpointLabel">
+        <property name="text">
+         <string>Setpoint: - °C</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: orange;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="modeLabel">
+        <property name="text">
+         <string>Mode: -</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: crimson;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="flowLabel">
+        <property name="text">
+         <string>Flow Rate: -</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold; color: purple;</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Temperature Plot Area (gets double space) -->
+    <item>
+     <widget class="QWidget" name="plotWidget">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>200</height>
+       </size>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Pause/Clear/Export plot buttons -->
+    <item>
+     <layout class="QHBoxLayout" name="plotControlLayout">
+      <item>
+       <widget class="QPushButton" name="pausePlotButton">
+        <property name="text">
+         <string>Pause Plotting</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clearPlotButton">
+        <property name="text">
+         <string>Clear Plot</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportPlotButton">
+        <property name="text">
+         <string>Export Plot Data</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

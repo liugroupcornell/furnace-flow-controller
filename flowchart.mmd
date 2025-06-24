@@ -1,0 +1,9 @@
+flowchart TD
+    FWT["FurnaceWorker<br>(emits dataReady signal)"] --> HFD["handle_furnace_data()"]
+    MT["Main Thread"] --> MW["MainWindow"] & SW["StageWidget (several)"]
+    MW --> HFD & PQT["plot_timer (QTimer)"] & EQT["elapsed_timer (QTimer)"]
+    PQT --> UTP["update_temperature_plot()"]
+    EQT --> UET["update_elapsed_time()"]
+
+
+

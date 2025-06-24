@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QLabel" name="stageLabel">
+     <property name="text">
+      <string>Stage 1</string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="temperatureSpinBox">
+     <property name="prefix">
+      <string>Temp: </string>
+     </property>
+     <property name="suffix">
+      <string> °C</string>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>1200</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="rampTimeSpinBox">
+     <property name="prefix">
+      <string>Ramp: </string>
+     </property>
+     <property name="suffix">
+      <string> min</string>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>9999</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSpinBox" name="holdTimeSpinBox">
+     <property name="prefix">
+      <string>Hold: </string>
+     </property>
+     <property name="suffix">
+      <string> min</string>
+     </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>9999</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDoubleSpinBox" name="flowRateSpinBox">
+     <property name="prefix">
+      <string>Flow: </string>
+     </property>
+     <property name="suffix">
+      <string> SLM</string>
+     </property>
+     <property name="maximum">
+      <double>1000.0</double>
+     </property>
+     <property name="decimals">
+      <number>3</number>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="rangeComboBox">
+     <property name="toolTip">
+      <string>Select flow range</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

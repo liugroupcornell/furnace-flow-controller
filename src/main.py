@@ -137,7 +137,7 @@ class MainWindow(QMainWindow):
 
         # MFC initial settings
         self.mfc.set_flow_setpoint(1, 0)
-        self.mfc.set_gas_menu(1)
+        self.mfc.set_gas_menu(0)
         #self.mfc.set_gas_setpoint(1, 1, 0)
         self.mfc.open_valve(1)
         self.mfc.open_valve(0)

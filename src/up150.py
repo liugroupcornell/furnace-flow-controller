@@ -7,7 +7,7 @@ class UP150():
     
     communication protocal: RS-485, PC Link
     '''
-    def __init__(self, address:str='ASRL4::INSTR', wait_time:float=0.1):
+    def __init__(self, address:str='ASRL4::INSTR', wait_time:float=0.7):
         rm = visa.ResourceManager()
         self.inst = rm.open_resource(address)
         self.inst.baud_rate = 9600

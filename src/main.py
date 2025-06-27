@@ -11,8 +11,8 @@ from up150 import UP150
 from mks647b import MKS647B
 
 # Constants
-REFRESH_TIME = 30000  # Data refresh interval in milliseconds (30 seconds)
-POST_ANNEAL_FLOW_RATE = 1  # Post-anneal flow rate setpoint (1 SCCM)
+REFRESH_TIME = 40000  # Data refresh interval in milliseconds (40 seconds)
+POST_ANNEAL_FLOW_RATE = 6  # Post-anneal flow rate setpoint (6 SCCM)
 MAX_PLOT_LENGTH = 121000  # Max number of data points to retain for plotting
 
 class StageWidget(QWidget):
@@ -104,9 +104,10 @@ class FurnaceWorker(QThread):
                 flow = self.mfc.get_actual_flow(1)
                 range_code = self.mfc.get_range(1)
                 setpoint = self.furnace.get_current_setpoint()
-                self.dataReady.emit(segment, time_left, temp, flow, range_code, setpoint)
             except Exception as e:
                 print("Error in worker:", e)
+                continue
+            self.dataReady.emit(segment, time_left, temp, flow, range_code, setpoint)
             self.msleep(REFRESH_TIME)  # Wait before next poll
 
     def stop(self):
@@ -484,6 +485,7 @@ class MainWindow(QMainWindow):
             # Set post-anneal flow to prevent pressure drop
             self.mfc.set_range(1, 500, "SCCM")
             self.mfc.set_flow_setpoint(1, POST_ANNEAL_FLOW_RATE)
+            print(f'Post anneal flow set to {POST_ANNEAL_FLOW_RATE} SCCM')
             #self.mfc.set_gas_setpoint(1, 1, POST_ANNEAL_FLOW_RATE)
             self.post_anneal_flow = True
 

@@ -7,7 +7,7 @@ class MKS647B():
 
     communication protocal: RS-232
     '''
-    def __init__(self, address:str='ASRL3::INSTR', wait_time:float=0.5,
+    def __init__(self, address:str='ASRL3::INSTR', wait_time:float=0.7,
                  range_value:int=1, range_unit:str='SLM', debug_mode:bool=False):
         rm = visa.ResourceManager()
         self.inst = rm.open_resource(address)
@@ -199,7 +199,7 @@ class MKS647B():
             3
         ) * range_factor
 
-    def set_flow_setpoint(self, channel:int, set_point:int):
+    def set_flow_setpoint(self, channel:int, set_point:float):
         '''
         enter setpoint of a channel (may be error due to rounding)
 
